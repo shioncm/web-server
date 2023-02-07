@@ -5,13 +5,14 @@ import sys # In order to terminate the program
 serverSocket = socket(AF_INET, SOCK_STREAM)
 
 #Prepare a sever socket
-#Fill in start
-#Fill in end
+serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+serversocket.bind((socket.gethostname(), 80))
+serversocket.listen(5)
 
 while True:
     #Establish the connection
     print('Ready to serve...')
-    connectionSocket, addr = #Fill in start #Fill in end 
+    connectionSocket, addr = serversocket.accept() 
     
     try:
         message = #Fill in start #Fill in end 
