@@ -1,12 +1,16 @@
 #import socket module
-from socket import *
+from socket import * 
+# import socket
 import sys # In order to terminate the program
 
+# print(socket.gethostbyname(socket.gethostname()))
+
 serverSocket = socket(AF_INET, SOCK_STREAM)
+# serverSocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 #Prepare a sever socket
-serverport = 80
-serverSocket.bind((socket.gethostname(), serverport))
+serverport = 6787
+serverSocket.bind(('', serverport))
 serverSocket.listen(5)
 
 while True:
@@ -21,7 +25,7 @@ while True:
         outputdata = f.read()
  
         #Send one HTTP header line into socket
-        connectionSocket.send('HTTP/1.1 200 OK\r\n\r\n')
+        connectionSocket.send(b'HTTP/1.1 200 OK\r\n\r\n')
  
         #Send the content of the requested file to the client
         for i in range(0, len(outputdata)): 
@@ -33,7 +37,7 @@ while True:
  
     except IOError:
         #Send response message for file not found
-        connectionSocket.send('\nHTTP/1.1 404 Not Found\n\n')
+        connectionSocket.send(b'HTTP/1.1 404 Not found\r\n\r\n')
         
         #Close client socket
         connectionSocket.close()
