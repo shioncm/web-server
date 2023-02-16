@@ -47,6 +47,10 @@ python3 webserver.py
 [An image displaying the demonstration of "404 Not Found" using the web server](./404.png?raw=true "404 demonstration")
 
 
+![An image displaying the demonstration of a successful run of the web server](https://github.com/shioncm/web-server/blob/dda8421c72e27f990706f790192737403231eea6/success.png?sanitize=true)
+<img src="https://github.com/shioncm/web-server/blob/dda8421c72e27f990706f790192737403231eea6/success.png?sanitize=true">
+
+
 ## AUTHOR
 
 - Name: Shion M 
